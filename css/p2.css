@@ -1,0 +1,86 @@
+/*
+  CSS file for p2.php
+*/
+
+body {
+    background-color: #EBFFEE;
+    font: 16px Arial, sans-serif;
+    color: #26665E;
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    font: bold 38px;
+    color: #054D44;
+}
+
+#mini {
+    display: inline-block;
+    font-size: 14px;
+}
+
+img {
+    display: block;
+    padding-top: 5px;
+    height: 300px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #80346B;
+}
+
+a:hover {
+    background-color: #CC90BC;
+    color: #4D3647;
+}
+
+a:visited {
+    color: #5A244C;
+}
+
+label {
+    display: inline-block;
+    width: 225px;
+    text-align: left;
+    margin-left: .25em;
+}
+
+input {
+  display: inline-block;
+  width: 18px;
+}
+
+.btn {
+    border: 1px solid #46B69E;
+    border-radius:8px;
+    color: #ffffff;
+    font: normal bold 15px/14px Arial, sans-serif;
+    height: 30px;
+    width: 82px;
+    padding: .5em;
+    text-align: center;
+    background-color: #3C9C88;
+}
+
+.btn:hover {
+    border: 2px solid #266254;
+    background-color:#317F6E;
+}
+
+.password {
+    background-color: #509984;
+    color: #E2F2EA;
+    font: bold 32px Arial, sans-serif;
+    margin-bottom: 25px;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.error {
+    color: #F25E5C;
+    padding: 10px;
+    height: 18px;
+}

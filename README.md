@@ -14,4 +14,4 @@ This is a xkcd style password generator in PHP. Form inputs how many words to us
 N/A
 
 ## Outside code
-N/A.
+N/A
