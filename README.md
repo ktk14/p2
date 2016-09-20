@@ -11,7 +11,7 @@ This is a xkcd style password generator in PHP. Form inputs how many words to us
 <>
 
 ## Details for teaching team
-N/A
+I am rusty and sadly loops and I have always had issues. I hope it turned out ok.
 
 ## Outside code
-N/A
+*Examples from class (error reporting commented out for production, but used locally)
