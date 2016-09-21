@@ -1,50 +1,72 @@
 <?php
-# Arrays
-# need an array of words
+#Arrays
+# array of words
 $words = [
-    'molly',
-    'dog'
-    'tea',
-    'pop',
-    'panda',
-    'oil',
-    'purification',
-    'peppermint',
-    'chocolate',
-    'book',
-    'bed',
-    'gum',
-    'rice',
-    'manga',
-    'berlin'
-    ];
-# need array of numbers
-$numbers = [
-    '14',
-    '13'
-    '5',
-    '7',
-    '12',
-    '30'
-    ];
-# need array of symbols
-$symbols = [
-    '@',
-    '!',
-    '$',
-    '#',
-    '?'
+    "molly",
+    "dog",
+    "tea",
+    "pop",
+    "panda",
+    "oil",
+    "purification",
+    "peppermint",
+    "chocolate",
+    "book",
+    "bed",
+    "gum",
+    "rice",
+    "manga",
+    "berlin"
     ];
 
-# loop through arrays of using foreach()
-# use array_rand(), but that returns keys so use array_flip to switch keys and values to get the values
-$flippedw = array_rand(array_flip($words), $n);
-$n = 4; # hard code the min of 4 words
-# use array_rand() to choose number
-# use array_rand() to choose symbol
+# array of symbols
+$symbol = [
+    "@",
+    "!",
+    "$",
+    "#",
+    "?".
+    "*"
+    ];
+
+# variables
+$psw = ""; #password shown on index
+# get the number of words from index
+$numwords = 4;
+$error =""; #error msg
+
+# check to make sure value is 4-9
+if (isset($_POST["numwords"])) {
+    $numwords = $_POST["numwords"];
+/*} elseif ($_POST["numwords"] < 4 || $_POST["numwords"] >9){
+    $error = "Must enter a numeric value between 4 and 9.";
+    return;
+} elseif  (!ctype_digit($_POST["numwords"])){
+    $error = "Must enter a numeric value between 4 and 9.";
+    return;*/
+} else {
+    $numwords = 4;
+}
+# temp number of words
+$tempw = array_rand($words, $numwords);
+
+# loop through arrays and add them together
+foreach ($tempw as $key => $value) { # to get the string values
+    $psw .= $words[$value]."-";
+
+}
+$psw = substr($psw, 0, -1); #remove trailing hyphen
+# check if need to add number
+if (isset($_POST["addnum"])) {
+    $tempn = mt_rand(0,9);
+    $psw .= $tempn; # append number if selected
+}
+# check if need to add symbol
+if (isset($_POST["addsymbol"])) {
+    $psw .= $symbol[rand(0,5)]; # append symbol if selected
+}
+
 # validate input is only numeric use ctype_digit
-// $numwords = # user input of number of words
-// $psw = # password shown to user
 /*
 if(!ctype_digit($n)) {
     $error = "May only contain a numeric value";
@@ -55,5 +77,5 @@ else if(trim($n == "")){
     return;
 }
 # need ifs for error msgs
-
+*/
  ?>

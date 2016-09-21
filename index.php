@@ -13,22 +13,20 @@ ini_set('display_errors', 1); # Display errors on page
 <body>
     <h1>Katie Kujala's xkcd Style Password Generator</h1>
     <p class="password">
-        <!--<?php echo $psw; ?>-->
+        <?php echo $psw; ?>
     </p>
     <form method="POST" action="index.php">
         <p class="options">
-
-            <input maxlength=1 type="text" name="numwords" id="numwords" value="" />
-            <label for="numwords">Number of Words (max 9)</label>
+            <label for="numwords"># of Words (4-9)</label>
+            <input type="text" maxlength=1 name="numwords" id="numwords" />
             <br />
-            <input type="checkbox" name="number" id="number" />
-            <label for="number">Add a number</label>
+            <input type="checkbox" name="addnum" id="addnum" />
+            <label for="addnum">Add a number</label>
             <br />
-            <input type="checkbox" name="symbol" id="symbol" />
-            <label for="symbol">Add a symbol/special character</label>
+            <input type="checkbox" name="addsymbol" id="addsymbol" />
+            <label for="addsymbol">Add a symbol/special character</label>
         </p>
         <br />
-
         <input type="submit" class="btn" value="Another" />
 
         <?php if(isset($error)): ?>
@@ -36,13 +34,12 @@ ini_set('display_errors', 1); # Display errors on page
         <?php endif ?>
     </form>
     <br />
-    <p id="mini">
-        <a href="http://xkcd.com/936/" target="_blank">xkcd password strength</a>
-        <a href="http://xkcd.com/936/" target="_blank">
-            <img class="img" src="http://imgs.xkcd.com/comics/password_strength.png" alt="xkcd style passwords">
-        </a>
-        <br>
-    </p>
+    <div id="mini">
+        <p>
+            <a href="http://xkcd.com/936/" target="_blank">xkcd password strength</a> is the comic that provided the inspiration for this password generator.
+        </p>
+        <img class="img" src="/images/molly.jpg" alt="Molly, my dog" title="My security dog, Molly">
+    </div>
 
 </body>
 </html>
