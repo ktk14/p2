@@ -1,7 +1,10 @@
+<!--
 <?php
 error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
 ini_set('display_errors', 1); # Display errors on page
-?> <!-- taken from error reporting section of dwa15-fall2016-notes by Susan Buck -->
+?>
+Useful for debugging, but commented out when going live
+--><!-- taken from error reporting section of dwa15-fall2016-notes by Susan Buck -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +21,12 @@ ini_set('display_errors', 1); # Display errors on page
     <form method="POST" action="index.php">
         <p class="options">
             <label for="numwords"># of Words (4-9)</label>
-            <input type="text" maxlength=1 name="numwords" id="numwords" />
+            <input type="text" maxlength=1 name="numwords" id="numwords" value="<?php echo $numwords; ?>" />
             <br />
-            <input type="checkbox" name="addnum" id="addnum" />
+            <input type="checkbox" name="addnum" id="addnum" <?php if (isset($addnum)) echo "checked";?> />
             <label for="addnum">Add a number</label>
             <br />
-            <input type="checkbox" name="addsymbol" id="addsymbol" />
+            <input type="checkbox" name="addsymbol" id="addsymbol" <?php if (isset($addsymbol)) echo "checked";?> />
             <label for="addsymbol">Add a symbol/special character</label>
         </p>
         <br />
