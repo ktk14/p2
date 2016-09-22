@@ -23,10 +23,10 @@ Useful for debugging, but commented out when going live
             <label for="numwords"># of Words (4-9)</label>
             <input type="text" maxlength=1 name="numwords" id="numwords" value="<?php echo $numwords; ?>" />
             <br />
-            <input type="checkbox" name="addnum" id="addnum" <?php if (isset($addnum)) echo "checked";?> />
+            <input type="checkbox" name="addnum" id="addnum" value="<?php if (isset($addnum)) echo "checked";?>" />
             <label for="addnum">Add a number</label>
             <br />
-            <input type="checkbox" name="addsymbol" id="addsymbol" <?php if (isset($addsymbol)) echo "checked";?> />
+            <input type="checkbox" name="addsymbol" id="addsymbol" value="<?php if (isset($addsymbol)) echo "checked";?>" />
             <label for="addsymbol">Add a symbol/special character</label>
         </p>
         <br />

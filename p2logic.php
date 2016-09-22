@@ -25,7 +25,7 @@ $symbol = [
     "!",
     "$",
     "#",
-    "?".
+    "?",
     "*"
     ];
 
@@ -35,16 +35,19 @@ $numwords = 4; # get the number of words from index
 $error =""; # error msg
 
 # check to make sure value acceptable
-if (isset($_POST["numwords"]) && ($_POST["numwords"] > 4)) { # values greater than 4
+if (isset($_POST["numwords"])) {
     $numwords = $_POST["numwords"];
+    # handle the pesky letter inputs. Not sure why it won't show the default 4 words tho.
+    if (!is_numeric($numwords) || $numwords < 4) {
+        $error = "Please enter a number between 4 and 9.";
+        return;
     }else {
-        $error = "Please enter a number between 4 and 9. Default value of 4 words shown.";
-        # if there is anything beside values 4-9 error msg gets displayed and default value of 4 shown
+        $numwords = $_POST["numwords"];
     }
+}
 
-# place holder for words and number of words
+# temp number of words
 $tempw = array_rand($words, $numwords);
-
 # loop through arrays and add them together
 foreach ($tempw as $key => $value) { # to get the string values
     # add words to psw value and put hyphen between words
